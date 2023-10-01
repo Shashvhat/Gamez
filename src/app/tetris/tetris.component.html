@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="scores">Scores</div>
+  <div class="scree">
+    <table class="gamerectangle">
+      <tr *ngFor="let row of emptyTable; let i = index">
+        <td id="a{{ i }}_{{ j }}" *ngFor="let cell of row; let j = index">
+          <div class="inn" id="b{{ i }}_{{ j }}">{{ null }}</div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="Info"></div>
+</div>
+<div (keydown)="handleKeyboardEvent($event)" class="displaynone"></div>
