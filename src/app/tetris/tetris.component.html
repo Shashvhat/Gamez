@@ -1,14 +1,20 @@
 <div class="container">
-  <div class="scores">Scores</div>
+  <div class="leftside">
+    <button class="restart" (click)="restart()">Restart</button>
+  </div>
   <div class="scree">
     <table class="gamerectangle">
       <tr *ngFor="let row of emptyTable; let i = index">
         <td id="a{{ i }}_{{ j }}" *ngFor="let cell of row; let j = index">
-          <div class="inn" id="b{{ i }}_{{ j }}">{{ null }}</div>
+          <div class="burst inn" id="b{{ i }}_{{ j }}">{{ null }}</div>
         </td>
       </tr>
     </table>
   </div>
-  <div class="Info"></div>
+  <div class="rightside">
+    <div class="scorebox">
+      <div class="scores" id="score">{{ SCORE }}</div>
+    </div>
+  </div>
 </div>
 <div (keydown)="handleKeyboardEvent($event)" class="displaynone"></div>
