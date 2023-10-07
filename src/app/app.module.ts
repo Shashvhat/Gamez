@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GamescreenComponent } from './gamescreen/gamescreen.component';
 import { TetrisComponent } from './tetris/tetris.component';
+import { SnakeComponent } from './snake/snake.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GamescreenComponent,
-    TetrisComponent
+    TetrisComponent,
+    SnakeComponent
   ],
   imports: [
     BrowserModule,

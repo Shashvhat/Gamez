@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+.gamebtn {
+  margin: 20px;
+  padding: 20px 20px;
+  background-color: black;
+  color: #7fffd4;
+  font-size: 30px;
+  border: 2px solid #00329f;
+  border-radius: 30px;
+}
+
+.transition_to_game {
+  transform-origin: center center;
+  animation: game-animation 0.4s forwards;
+}
+
+@keyframes game-animation {
+  0% {
+    transform: scale(1);
+    color: #7fffd4;
+  }
+  20% {
+    color: transparent;
+  }
+
+  100% {
+    transform: scale(20);
+    color: transparent;
+  }
+}

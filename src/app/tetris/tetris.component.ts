@@ -1,4 +1,10 @@
-import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  OnInit,
+  Renderer2,
+} from '@angular/core';
 
 @Component({
   selector: 'app-tetris',
@@ -76,6 +82,7 @@ export class TetrisComponent {
   }
 
   startGame() {
+    this.RESTART = false;
     this.cleanArray();
     this.PEAK_HEIGHT = 19;
     this.dropNewBlock();
@@ -103,28 +110,29 @@ export class TetrisComponent {
       if (this.RESTART) {
         this.RESTART = false;
         clearInterval(intervalId);
-      }
-      this.Y_AXIS++;
-      // console.log(this.PEAK_HEIGHT);
+      } else {
+        this.Y_AXIS++;
+        // console.log(this.PEAK_HEIGHT);
 
-      for (let k = 0; k < 4; k++) {
-        let r = this.SHAPES[this.randomShape][k];
+        for (let k = 0; k < 4; k++) {
+          let r = this.SHAPES[this.randomShape][k];
 
-        let Y =
-          this.Y_AXIS - 1 < 0 ? this.Y_AXIS + r[0] : this.Y_AXIS - 1 + r[0];
-        let X = r[1] + this.horz;
+          let Y =
+            this.Y_AXIS - 1 < 0 ? this.Y_AXIS + r[0] : this.Y_AXIS - 1 + r[0];
+          let X = r[1] + this.horz;
 
-        this.colourCell(Y, X, '#1a1a1a');
-      }
-      for (let k = 0; k < 4; k++) {
-        let r = this.SHAPES[this.randomShape][k];
+          this.colourCell(Y, X, '#1a1a1a');
+        }
+        for (let k = 0; k < 4; k++) {
+          let r = this.SHAPES[this.randomShape][k];
 
-        let Y = this.Y_AXIS + r[0];
-        let X = r[1] + this.horz;
+          let Y = this.Y_AXIS + r[0];
+          let X = r[1] + this.horz;
 
-        this.colourCell(Y, X, this.COLOURS[this.randomColor]);
+          this.colourCell(Y, X, this.COLOURS[this.randomColor]);
 
-        this.CURRENT_BLOCK[k] = [Y, X];
+          this.CURRENT_BLOCK[k] = [Y, X];
+        }
       }
       if (this.checkMove('Down')) {
         clearInterval(intervalId);
@@ -142,8 +150,11 @@ export class TetrisComponent {
     this.RESTART = true;
     this.SCORE = 0;
     for (let k = 0; k < 4; k++) {
-      this.funcArray[this.CURRENT_BLOCK[k][0]][this.CURRENT_BLOCK[k][1]] =
-        this.randomColor;
+      this.colourCell(
+        this.CURRENT_BLOCK[k][0],
+        this.CURRENT_BLOCK[k][1],
+        '#1a1a1a'
+      );
     }
     for (let i = this.PEAK_HEIGHT; i <= 19; i++) {
       for (let j = 0; j < 10; j++) {
@@ -152,7 +163,9 @@ export class TetrisComponent {
         }
       }
     }
-    this.startGame();
+    setTimeout(() => {
+      this.startGame();
+    }, this.SPEED + 10);
   }
 
   saveBlock() {
@@ -209,7 +222,9 @@ export class TetrisComponent {
         ++k;
         if (k == arr.length) {
           clearInterval(intervalIdK);
-          this.dropNewBlock();
+          setTimeout(() => {
+            this.dropNewBlock();
+          }, 1100);
         }
       }, 1100);
     } else {
@@ -220,6 +235,20 @@ export class TetrisComponent {
   }
 
   scoreAnim(rows: number) {
+    let k = 1;
+    this.scoreAnimOneRow();
+    if (rows > 1) {
+      const intervalIdK = setInterval(() => {
+        this.scoreAnimOneRow();
+        ++k;
+        if (k == rows) {
+          clearInterval(intervalIdK);
+        }
+      }, 1100);
+    }
+  }
+
+  scoreAnimOneRow() {
     let j = 0;
     const intervalId = setInterval(() => {
       const scoreEl = this.el.nativeElement.querySelector('#score');

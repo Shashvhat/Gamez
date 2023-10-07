@@ -1,10 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { TetrisComponent } from './tetris/tetris.component';
+import { GamescreenComponent } from './gamescreen/gamescreen.component';
+import { SnakeComponent } from './snake/snake.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'tetrisgame', component: TetrisComponent },
+  { path: 'snakegame', component: SnakeComponent },
+  { path: 'app-gamescreen', component: GamescreenComponent },
+  { path: '', redirectTo: 'app-gamescreen', pathMatch: 'full' },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
