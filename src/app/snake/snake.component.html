@@ -1,5 +1,12 @@
 <div class="container">
-  <!-- <div class="scores">Score</div> -->
+  <div class="top_level">
+    <button id="start" class="start">Start</button>
+    <div class="scorebox">
+      <div class="score">Score</div>
+      <div class="scores" id="score">{{ SCORE }}</div>
+    </div>
+    <button id="pause" class="start">Pause</button>
+  </div>
   <div class="scree">
     <table class="gamerectangle">
       <tr *ngFor="let row of emptyTable; let i = index">
@@ -11,3 +18,9 @@
   </div>
 </div>
 <div (keydown)="handleKeyboardEvent($event)" class="displaynone"></div>
+<!-- <div class="snakee">
+  <div class="head"></div>
+  <div class="bod"></div>
+  <div class="tail"></div>
+</div> -->
+<div class="speedup">Speed +</div>

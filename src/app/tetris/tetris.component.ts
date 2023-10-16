@@ -13,17 +13,17 @@ import {
 })
 export class TetrisComponent {
   emptyTable: any[][] = [];
+  tetristext: any[][] = [];
+
   funcArray: any[][] = [];
   COLOURS: any[] = [
     'd',
-    '#DFFF00',
-    '#FFBF00',
-    '#FF7F50',
-    '#DE3163',
-    '#9FE2BF',
-    '#40E0D0',
-    '#6495ED',
-    '#CCCCFF',
+    '#ff0000',
+    '#ffa500',
+    '#ffff00',
+    '#5ce600',
+    '#00c7fe',
+    '#ff00ff',
   ];
   SHAPES: any[][] = [
     [[0, 0], [0, 1], [1, 0], [1, 1], 2, 2, 0, 0],
@@ -55,6 +55,7 @@ export class TetrisComponent {
 
   horz: number = 4;
   RESTART: boolean = false;
+  startg: boolean = false;
   randomShape: number = 0;
   randomColor: number = 0;
   Y_AXIS: number = 0;
@@ -63,15 +64,65 @@ export class TetrisComponent {
   PEAK_HEIGHT: number = 19;
   CURRENT_BLOCK: number[][] = [];
 
+  TWO: number = 2;
+
+  Restart_or_Start: string = 'START';
+
   constructor(private renderer: Renderer2, private el: ElementRef) {}
 
   ngOnInit() {
     this.emptyTable = new Array(20)
       .fill(null)
       .map(() => new Array(10).fill(null));
+    this.tetristext = new Array(6)
+      .fill(null)
+      .map(() => new Array(9).fill(null));
     this.cleanArray();
 
-    this.startGame();
+    this.blurryanim();
+    this.textanim();
+  }
+
+  textanim() {
+    let x = 0;
+    const intervalId = setInterval(() => {
+      for (let i = 1; i <= 6; i++) {
+        const element = this.el.nativeElement.querySelector(`#tet${i}`);
+        this.renderer.setStyle(
+          element,
+          'color',
+          `${this.COLOURS[i - x < 1 ? i - x + 6 : i - x]}`
+        );
+      }
+      x = x == 5 ? 0 : x + 1;
+      if (this.startg) {
+        clearInterval(intervalId);
+      }
+    }, 100);
+  }
+
+  blurryanim() {
+    for (let i = 1; i <= 4; i++) {
+      const element = this.el.nativeElement.querySelector(`#circ${i}`);
+      this.renderer.addClass(element, `float${i}`);
+    }
+    let x = 0;
+    const intervalId = setInterval(() => {
+      for (let i = 1; i <= 4; i++) {
+        const element = this.el.nativeElement.querySelector(`#circ${i}`);
+
+        let p = i + x > 4 ? i + x - 4 : i + x;
+        this.renderer.removeClass(element, `float${p}`);
+      }
+      x = x == 3 ? 0 : x + 1;
+      for (let i = 1; i <= 4; i++) {
+        const element = this.el.nativeElement.querySelector(`#circ${i}`);
+        this.renderer.addClass(
+          element,
+          `float${i + x > 4 ? i + x - 4 : i + x}`
+        );
+      }
+    }, 20000);
   }
 
   cleanArray() {
@@ -101,7 +152,31 @@ export class TetrisComponent {
     this.Y_AXIS = -1;
     this.horz = 4;
     this.randomShape = this.randomNumber(18, 0);
-    this.randomColor = this.randomNumber(8, 1);
+    this.randomColor = this.randomNumber(6, 1);
+
+    const element = this.el.nativeElement.querySelector(`.scree`);
+    this.renderer.setStyle(
+      element,
+      'border-color',
+      this.COLOURS[this.randomColor]
+    );
+    this.renderer.setStyle(
+      element,
+      'box-shadow',
+      `0px 0px 10px 4px ${this.COLOURS[this.randomColor]}`
+    );
+    // setTimeout(() => {
+    //   const elemen = this.el.nativeElement.querySelectorAll(`td`);
+
+    //   elemen.forEach((td: any) => {
+    //     this.renderer.setStyle(
+    //       td,
+    //       'border',
+    //       `1.5px solid ${this.COLOURS[this.randomColor]}50`
+    //     );
+    //   });
+    // }, 10);
+
     this.dropBlock();
   }
 
@@ -147,25 +222,32 @@ export class TetrisComponent {
   }
 
   restart() {
-    this.RESTART = true;
-    this.SCORE = 0;
-    for (let k = 0; k < 4; k++) {
-      this.colourCell(
-        this.CURRENT_BLOCK[k][0],
-        this.CURRENT_BLOCK[k][1],
-        '#1a1a1a'
-      );
-    }
-    for (let i = this.PEAK_HEIGHT; i <= 19; i++) {
-      for (let j = 0; j < 10; j++) {
-        if (!this.isCoordEmpty(i, j)) {
-          this.colourCell(i, j, '#1a1a1a');
+    if (this.Restart_or_Start == 'START') {
+      this.startGame();
+      this.startg = true;
+      this.Restart_or_Start = 'RESTART';
+    } else {
+      this.RESTART = true;
+      this.SCORE = 0;
+      this.SPEED = 300;
+      for (let k = 0; k < 4; k++) {
+        this.colourCell(
+          this.CURRENT_BLOCK[k][0],
+          this.CURRENT_BLOCK[k][1],
+          '#1a1a1a'
+        );
+      }
+      for (let i = this.PEAK_HEIGHT; i <= 19; i++) {
+        for (let j = 0; j < 10; j++) {
+          if (!this.isCoordEmpty(i, j)) {
+            this.colourCell(i, j, '#1a1a1a');
+          }
         }
       }
+      setTimeout(() => {
+        this.startGame();
+      }, this.SPEED + 10);
     }
-    setTimeout(() => {
-      this.startGame();
-    }, this.SPEED + 10);
   }
 
   saveBlock() {
@@ -264,7 +346,23 @@ export class TetrisComponent {
     }, 100);
   }
 
+  speedIncAnim() {
+    const element = this.el.nativeElement.querySelector('.speedup');
+    this.renderer.addClass(element, 'speedupanim');
+    setTimeout(() => {
+      this.renderer.removeClass(element, 'speedupanim');
+    }, 1000);
+    this.SPEED -= 50;
+  }
+
   rowcll(row_to_clear: number) {
+    this.TWO--;
+    // speedIncAnim
+    if (this.TWO == 0) {
+      this.speedIncAnim();
+      this.TWO = 2;
+    }
+
     let j = 0;
     const intervalId = setInterval(() => {
       console.log(j);
@@ -454,6 +552,16 @@ export class TetrisComponent {
   colourCell(i: number, j: number, color: string) {
     const element = this.el.nativeElement.querySelector(`#b${i}_${j}`);
     this.renderer.setStyle(element, 'background-color', color);
+    if (color == '#1a1a1a') {
+      this.renderer.setStyle(element, 'box-shadow', 'none');
+    } else {
+      this.renderer.setStyle(
+        element,
+        'box-shadow',
+        `inset var(--bsinset) var(--bsinset) 0px #c2c2c266,
+      inset var(--bsinsetmin) var(--bsinsetmin) 0px #5c5c5c62`
+      );
+    }
   }
 
   @HostListener('document:keyup', ['$event'])
@@ -487,6 +595,14 @@ export class TetrisComponent {
         break;
       default:
         break;
+    }
+  }
+
+  mou(f: boolean) {
+    if (f) {
+      this.Restart_or_Start = 'Gau';
+    } else {
+      this.Restart_or_Start = 'Drea';
     }
   }
 }

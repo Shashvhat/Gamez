@@ -1,21 +1,55 @@
-<div class="container">
-  <div class="leftside">
-    <button class="restart" (click)="restart()">Restart</button>
-  </div>
-  <div class="scree">
-    <table class="gamerectangle">
-      <tr *ngFor="let row of emptyTable; let i = index">
-        <td id="a{{ i }}_{{ j }}" *ngFor="let cell of row; let j = index">
-          <div class="burst inn" id="b{{ i }}_{{ j }}">{{ null }}</div>
-        </td>
-      </tr>
-    </table>
-  </div>
-  <div class="rightside">
-    <div class="scorebox">
-      <div class="score">Score</div>
-      <div class="scores" id="score">{{ SCORE }}</div>
+<div class="roots">
+  <div class="container">
+    <div class="leftside">
+      <div class="tetristext">
+        <span class="tet" id="tet1" style="color: #ff0000">T</span>
+        <span class="tet" id="tet2" style="color: #ffa500">E</span>
+        <span class="tet" id="tet3" style="color: #ffff00">T</span>
+        <span class="tet" id="tet4" style="color: #5ce600">R</span>
+        <span class="tet" id="tet5" style="color: #00c7fe">I</span>
+        <span class="tet" id="tet6" style="color: #ff00ff">S</span>
+      </div>
+      <button
+        class="restart"
+        (click)="restart()"
+        (mouseenter)="mou(true)"
+        (mouseleave)="mou(false)"
+      >
+        {{ Restart_or_Start }}
+      </button>
+    </div>
+    <div class="scree">
+      <table class="gamerectangle">
+        <tr *ngFor="let row of emptyTable; let i = index">
+          <td id="a{{ i }}_{{ j }}" *ngFor="let cell of row; let j = index">
+            <div class="burst inn" id="b{{ i }}_{{ j }}">{{ null }}</div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="rightside">
+      <div class="scorebox">
+        <div class="score">Score</div>
+        <div class="scores" id="score">{{ SCORE }}</div>
+      </div>
     </div>
   </div>
+  <div (keydown)="handleKeyboardEvent($event)" class="displaynone"></div>
+  <div class="speedup">Speed +</div>
+  <div class="font-examples displaynone">
+    <h1 class="lilita-one">Lilita One Font</h1>
+    <h1 class="amatic-sc-bold">Amatic SC Bold Font</h1>
+    <h1 class="amatic-sc-regular">Amatic SC Regular Font</h1>
+    <h1 class="monoton">Monoton Font</h1>
+    <h1 class="orange-juice">Orange Juice 2.0 Font</h1>
+    <h1 class="pinyon-script">Pinyon Script Font</h1>
+    <h1 class="press-start-2p">Press Start 2P Font</h1>
+    <h1 class="shrikhand">Shrikhand Font</h1>
+    <h1 class="ubuntu">Ubuntu Font</h1>
+  </div>
+
+  <div class="backgroundcircles" id="circ1"></div>
+  <div class="backgroundcircles" id="circ2"></div>
+  <div class="backgroundcircles" id="circ3"></div>
+  <div class="backgroundcircles" id="circ4"></div>
 </div>
-<div (keydown)="handleKeyboardEvent($event)" class="displaynone"></div>

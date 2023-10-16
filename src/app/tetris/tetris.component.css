@@ -1,3 +1,11 @@
+.roots {
+  --vhbub: 55vh;
+  --vwbub: 76vw;
+  --bsinset: 4px;
+  --bsinsetmin: -4px;
+  --tablecol: #3c3cff;
+}
+
 .container {
   display: flex;
   width: 100%;
@@ -6,8 +14,10 @@
   align-items: center;
 }
 .scree {
-  border-radius: 5px;
-  border: 5px solid #3c3cff;
+  margin-top: 10px;
+  border-radius: 1px;
+  border: 1px solid var(--tablecol);
+  box-shadow: 0px 0px 20px 10px #3c3cff;
 }
 .gamerectangle {
   background-color: rgb(26, 26, 26);
@@ -17,19 +27,33 @@
 }
 td {
   margin: auto;
-  border: 1px solid #3c3cff;
+
+  border: 1.5px solid rgb(68, 68, 68);
 }
 
 .inn {
-  width: 26px;
-  height: 26px;
+  width: 25px;
+  height: 25px;
   margin: auto;
   border-radius: 3px;
+  /* border: ; */
 }
-
+.leftside {
+  display: flex;
+  height: 100%;
+  width: 400px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.rightside {
+  width: 400px;
+}
 .restart {
   padding: 10px 20px;
-  font-size: 16px;
+  font-family: "Lilita One";
+  /* position: fixed; */
+  font-size: 30px;
   background-color: transparent;
   border: 2px solid;
   border-color: #00ffff #04ff00 #0051ff #d400ff;
@@ -69,9 +93,11 @@ td {
     border-color: #00ffff #04ff00 #0051ff #d400ff;
   }
 }
+
 .scorebox {
   width: 100%;
   height: 100%;
+  font-family: "Monoton";
   display: flex;
   justify-content: space-between;
 }
@@ -79,11 +105,12 @@ td {
   text-orientation: sideways;
   font-size: 40px;
   color: #00ddff;
-  margin-right: 10px;
+  margin-right: 70px;
 }
 .scores {
-  width: 80px;
-  text-align: right;
+  /* font-family: "Press Start 2P"; */
+  /* text-align: right; */
+  width: 100%;
   font-size: 40px;
   overflow: hidden;
   white-space: nowrap;
@@ -127,4 +154,170 @@ td {
     text-shadow: none;
     transform: scale(1);
   }
+}
+
+.tetristext {
+  position: absolute;
+  margin-bottom: 400px;
+  margin-left: 40px;
+  font-family: "Press Start 2P";
+  color: #00ddff;
+  font-size: 60px;
+}
+
+.speedup {
+  font-family: "Shrikhand";
+  position: fixed;
+  z-index: 10;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  font-size: 100px;
+  /* align-self: center; */
+  color: transparent;
+  transition: transform 0.5s ease-out, opacity 2s ease-in;
+}
+
+.speedupanim {
+  /* animation: speed_up 0.2 forwards; */
+  opacity: 0%;
+  color: #1a1a1a;
+  text-shadow: 0px 0px 10px #f700ff;
+  transform: translate(-50%, -50%) scale(3);
+}
+
+/* app.component.css or your component's CSS file */
+
+.font-examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Adjust the value as needed to control the spacing between the elements */
+}
+
+.font-examples h1 {
+  margin: 10px; /* You can adjust the margin to control spacing within each h1 element */
+  padding: 10px; /* You can adjust the padding to control spacing within each h1 element */
+}
+
+.lilita-one {
+  font-family: "Lilita One", sans-serif;
+  color: cyan;
+}
+
+.amatic-sc-bold {
+  font-family: "Amatic SC", sans-serif;
+  font-weight: bold;
+  color: cyan;
+}
+
+.amatic-sc-regular {
+  font-family: "Amatic SC", sans-serif;
+  color: cyan;
+}
+
+.monoton {
+  font-family: "Monoton", sans-serif;
+  color: cyan;
+}
+
+.orange-juice {
+  font-family: "Orange Juice", sans-serif;
+  color: cyan;
+}
+
+.pinyon-script {
+  font-family: "Pinyon Script", sans-serif;
+  color: cyan;
+}
+
+.press-start-2p {
+  font-family: "Press Start 2P", sans-serif;
+  color: cyan;
+}
+
+.shrikhand {
+  font-family: "Shrikhand", sans-serif;
+  color: cyan;
+}
+
+.ubuntu {
+  font-family: "Ubuntu", sans-serif;
+  color: cyan;
+}
+
+.backgroundcircles {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  z-index: -10;
+  top: 0%;
+  left: 0%;
+  background-image: #fff;
+  content: "";
+  /* border: 30px solid #f700ff; */
+  border-radius: 50%;
+  filter: blur(170px);
+}
+#circ1 {
+  background-color: #f700ff;
+}
+#circ2 {
+  background-color: #00ff15;
+}
+#circ3 {
+  background-color: #00bfff;
+}
+#circ4 {
+  background-color: #d0ff00;
+}
+.float1 {
+  animation: 20s linear float1;
+}
+.float2 {
+  animation: 20s linear float2;
+}
+.float3 {
+  animation: 20s linear float3;
+}
+.float4 {
+  animation: 20s linear float4;
+}
+@keyframes float1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(var(--vwbub), 0);
+  }
+}
+
+@keyframes float2 {
+  0% {
+    transform: translate(var(--vwbub), 0);
+  }
+  100% {
+    transform: translate(var(--vwbub), var(--vhbub));
+  }
+}
+
+@keyframes float3 {
+  0% {
+    transform: translate(var(--vwbub), var(--vhbub));
+  }
+  100% {
+    transform: translate(0, var(--vhbub));
+  }
+}
+
+@keyframes float4 {
+  0% {
+    transform: translate(0, var(--vhbub));
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.tet {
+  /* text-shadow: 0px 0px 15px #ff0000; */
 }

@@ -1,11 +1,87 @@
 /* You can add global styles to this file, and also import other style files */
-html{
+html {
   background-color: black;
 }
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 0;
 }
 
-.displaynone{
+.displaynone {
   display: none;
+}
+
+body {
+  margin: 0;
+}
+
+/* src/assets/LilitaOne-Regular.ttf */
+@font-face {
+  font-family: "LilitaOne";
+  src: url("../assets/LilitaOne-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* src/assets/AmaticSC-Bold.ttf */
+@font-face {
+  font-family: "Amatic SC";
+  src: url("../assets/AmaticSC-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* src/assets/AmaticSC-Regular.ttf */
+@font-face {
+  font-family: "Amatic SC";
+  src: url("../assets/AmaticSC-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* src/assets/Monoton-Regular.ttf */
+@font-face {
+  font-family: "Monoton";
+  src: url("../assets/Monoton-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* src/assets/orange juice 2.0.ttf */
+@font-face {
+  font-family: "Orange Juice";
+  src: url("../assets/orange juice 2.0.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* src/assets/PinyonScript-Regular.ttf */
+@font-face {
+  font-family: "Pinyon Script";
+  src: url("../assets/PinyonScript-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* src/assets/PressStart2P-Regular.ttf */
+@font-face {
+  font-family: "Press Start 2P";
+  src: url("../assets/PressStart2P-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* src/assets/Shrikhand-Regular.ttf */
+@font-face {
+  font-family: "Shrikhand";
+  src: url("../assets/Shrikhand-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* src/assets/Ubuntu-Regular.ttf */
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../assets/Ubuntu-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
