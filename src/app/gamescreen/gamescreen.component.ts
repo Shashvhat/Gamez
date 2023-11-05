@@ -13,7 +13,13 @@ export class GamescreenComponent {
     private el: ElementRef
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    setTimeout(() => {
+      const ele = this.el.nativeElement.querySelector(`#introid`);
+      // this.renderer.addClass(ele, 'introcom');
+    }, 400);
+  }
+
   goToGame(gameName: string) {
     const transition_to_game = this.el.nativeElement.querySelector(
       `#${gameName}btn`

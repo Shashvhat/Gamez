@@ -31,3 +31,7 @@
     color: transparent;
   }
 }
+
+.introcom {
+  transform: scale(0.1);
+}

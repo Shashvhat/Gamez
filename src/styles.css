@@ -85,3 +85,207 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Aladin";
+  src: url("../assets/Wierd_fonts/Aladin-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Annie Use Your Telescope";
+  src: url("../assets/Wierd_fonts/AnnieUseYourTelescope-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Berkshire Swash";
+  src: url("../assets/Wierd_fonts/BerkshireSwash-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Black Ops One";
+  src: url("../assets/Wierd_fonts/BlackOpsOne-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cabin Sketch";
+  src: url("../assets/Wierd_fonts/CabinSketch-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cabin Sketch";
+  src: url("../assets/Wierd_fonts/CabinSketch-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Creepster";
+  src: url("../assets/Wierd_fonts/Creepster-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fredericka the Great";
+  src: url("../assets/Wierd_fonts/FrederickatheGreat-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Henny Penny";
+  src: url("../assets/Wierd_fonts/HennyPenny-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Homemade Apple";
+  src: url("../assets/Wierd_fonts/HomemadeApple-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Irish Grover";
+  src: url("../assets/Wierd_fonts/IrishGrover-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Libre Barcode 39";
+  src: url("../assets/Wierd_fonts/LibreBarcode39-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Love Ya Like A Sister";
+  src: url("../assets/Wierd_fonts/LoveYaLikeASister-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nosifer";
+  src: url("../assets/Wierd_fonts/Nosifer-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Color Emoji";
+  src: url("../assets/Wierd_fonts/NotoColorEmoji-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Music";
+  src: url("../assets/Wierd_fonts/NotoMusic-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans SignWriting";
+  src: url("../assets/Wierd_fonts/NotoSansSignWriting-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans Symbols 2";
+  src: url("../assets/Wierd_fonts/NotoSansSymbols2-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Reenie Beanie";
+  src: url("../assets/Wierd_fonts/ReenieBeanie-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Rubik Moonrocks";
+  src: url("../assets/Wierd_fonts/RubikMoonrocks-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Rubik Pixels";
+  src: url("../assets/Wierd_fonts/RubikPixels-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sedgwick Ave";
+  src: url("../assets/Wierd_fonts/SedgwickAve-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Special Elite";
+  src: url("../assets/Wierd_fonts/SpecialElite-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CocomatUltralight";
+  src: url("../assets/CocomatUltralight-3ngp.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Rockybilly";
+  src: url("../assets/Rockybilly.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Allagia";
+  src: url("../assets/AllagiaDemo.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Spider_r";
+  src: url("../assets/Spider_r.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Spider_s";
+  src: url("../assets/Spider_s.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,175 @@
+.nam {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-wrap: wrap;
+  animation: shift 1s forwards 5s;
+}
+
+@keyframes shift {
+  0% {
+    height: 100vh;
+  }
+  100% {
+    height: 30px;
+  }
+}
+
+.char-span {
+  opacity: 0%;
+}
+
+#my {
+  display: flex;
+  margin: 0;
+  font-family: "Henny Penny";
+  letter-spacing: 10px;
+  text-shadow: 0px 0px 10px #ff0060;
+  font-size: 50px;
+  color: #8800ff;
+  animation: inc-textshadow 5s infinite 2s forwards;
+  /* animation: inc-animation 100s linear 0s forwards; */
+}
+
+@keyframes inc-textshadow {
+  0% {
+    /* transform: scale(1); */
+    text-shadow: 0px 0px 10px #ff0060;
+    /* opacity: 0%; */
+  }
+  25% {
+    text-shadow: 0px 0px 20px #ff0060;
+  }
+  50% {
+    text-shadow: 0px 0px 10px #ff0060;
+  }
+  75% {
+    text-shadow: 0px 0px 20px #ff0060;
+  }
+  100% {
+    text-shadow: 0px 0px 10px #ff0060;
+  }
+}
+
+@keyframes inc-animation {
+  0% {
+    transform: scale(1);
+    /* opacity: 0%; */
+  }
+  5% {
+  }
+  100% {
+    transform: scale(3);
+    opacity: 100%;
+    /* letter-spacing: 1000px; */
+  }
+}
+
+.spis {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+
+  font-family: "Spider_s";
+  text-shadow: 0px 0px 0px;
+  font-size: 100px;
+  color: #ffffff;
+}
+
+.spisanim {
+  animation: glitch 0.5s 0.2s normal;
+}
+
+@keyframes spisan {
+  0%,
+  100%,
+  4%,
+  26%,
+  34%,
+  56% {
+    text-shadow: 0px 0px 0px #0000ff, 0px 0px 0px #ff0000;
+  }
+  5% {
+    text-shadow: -5px 10px 0px #0000ff, 5px -10px 0px #ff0000;
+  }
+  25% {
+    text-shadow: -25px 30px 0px #0000ff, 20px -40px 0px #ff0000;
+  }
+  35% {
+    text-shadow: -5px 10px 500px 0px #0000ff, 5px -10px 500px 0px #ff0000;
+  }
+  55% {
+    text-shadow: -25px 30px 500px 0px #0000ff, 20px -40px 500px 0px #ff0000;
+  }
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
+}
+
+.spir {
+  position: fixed;
+  right: 50%;
+  left: 50%;
+  opacity: 0;
+  /* margin-left: 10px; */
+  font-family: "Spider_r";
+  text-shadow: 0px 0px 0px;
+}

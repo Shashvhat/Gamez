@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { GamescreenComponent } from './gamescreen/gamescreen.component';
 import { TetrisComponent } from './tetris/tetris.component';
 import { SnakeComponent } from './snake/snake.component';
+import { IntroComponent } from './intro/intro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GamescreenComponent,
     TetrisComponent,
-    SnakeComponent
+    SnakeComponent,
+    IntroComponent
   ],
   imports: [
     BrowserModule,

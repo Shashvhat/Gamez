@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { TetrisComponent } from './tetris/tetris.component';
 import { GamescreenComponent } from './gamescreen/gamescreen.component';
 import { SnakeComponent } from './snake/snake.component';
+import { IntroComponent } from './intro/intro.component';
 
 const routes: Routes = [
   { path: 'tetrisgame', component: TetrisComponent },
   { path: 'snakegame', component: SnakeComponent },
   { path: 'app-gamescreen', component: GamescreenComponent },
+  { path: 'intro-screen', component: IntroComponent },
   { path: '', redirectTo: 'app-gamescreen', pathMatch: 'full' },
 ];
 

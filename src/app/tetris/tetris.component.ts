@@ -98,7 +98,7 @@ export class TetrisComponent {
       if (this.startg) {
         clearInterval(intervalId);
       }
-    }, 100);
+    }, 90);
   }
 
   blurryanim() {

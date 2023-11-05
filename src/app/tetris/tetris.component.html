@@ -9,14 +9,13 @@
         <span class="tet" id="tet5" style="color: #00c7fe">I</span>
         <span class="tet" id="tet6" style="color: #ff00ff">S</span>
       </div>
-      <button
-        class="restart"
-        (click)="restart()"
-        (mouseenter)="mou(true)"
-        (mouseleave)="mou(false)"
-      >
+      <button class="restart" (click)="restart()">
         {{ Restart_or_Start }}
       </button>
+      <div class="scorebox">
+        <div class="score">Score</div>
+        <div class="scores" id="score">{{ SCORE }}</div>
+      </div>
     </div>
     <div class="scree">
       <table class="gamerectangle">
@@ -27,12 +26,7 @@
         </tr>
       </table>
     </div>
-    <div class="rightside">
-      <div class="scorebox">
-        <div class="score">Score</div>
-        <div class="scores" id="score">{{ SCORE }}</div>
-      </div>
-    </div>
+    <div class="rightside"></div>
   </div>
   <div (keydown)="handleKeyboardEvent($event)" class="displaynone"></div>
   <div class="speedup">Speed +</div>
@@ -46,6 +40,77 @@
     <h1 class="press-start-2p">Press Start 2P Font</h1>
     <h1 class="shrikhand">Shrikhand Font</h1>
     <h1 class="ubuntu">Ubuntu Font</h1>
+  </div>
+
+  <div class="font-examples">
+    <h1 class="font-example" style="font-family: 'Lilita One'">
+      Lilita One Font
+    </h1>
+    <h1 class="font-example" style="font-family: 'Aladin'">Aladin Font</h1>
+    <h1 class="font-example" style="font-family: 'Annie Use Your Telescope'">
+      Annie Use Your Telescope Font
+    </h1>
+    <h1 class="font-example" style="font-family: 'Berkshire Swash'">
+      Berkshire Swash Font
+    </h1>
+    <h1 class="font-example" style="font-family: 'Black Ops One'">
+      Black Ops One Font
+    </h1>
+    <h1 class="font-example" style="font-family: 'Cabin Sketch'">
+      Cabin Sketch Font
+    </h1>
+    <h1 class="font-example" style="font-family: 'Creepster'">
+      Creepster Font
+    </h1>
+    <h1 class="font-example" style="font-family: 'Fredericka the Great'">
+      Fredericka the Great Font
+    </h1>
+    <h1 class="font-example" style="font-family: 'Henny Penny'">
+      Henny Penny Font
+    </h1>
+    <h1 class="font-example" style="font-family: 'Homemade Apple'">
+      Homemade Apple Font
+    </h1>
+    <h1 class="font-example" style="font-family: 'Irish Grover'">
+      Irish Grover Font
+    </h1>
+    <h1 class="font-example" style="font-family: 'Libre Barcode 39'">
+      Libre Barcode 39 Font
+    </h1>
+    <h1 class="font-example" style="font-family: 'Love Ya Like A Sister'">
+      Love Ya Like A Sister Font
+    </h1>
+    <h1 class="font-example" style="font-family: 'Nosifer'">Nosifer Font</h1>
+    <h1 class="font-example" style="font-family: 'Noto Color Emoji'">
+      Noto Color Emoji Font
+    </h1>
+    <h1 class="font-example" style="font-family: 'Noto Music'">
+      Noto Music Font
+    </h1>
+    <h1 class="font-example" style="font-family: 'Noto Sans SignWriting'">
+      Noto Sans SignWriting Font
+    </h1>
+    <h1 class="font-example" style="font-family: 'Noto Sans Symbols 2'">
+      Noto Sans Symbols 2 Font
+    </h1>
+    <h1 class="font-example" style="font-family: 'Reenie Beanie'">
+      Reenie Beanie Font
+    </h1>
+    <h1 class="font-example" style="font-family: 'Rubik Moonrocks'">
+      Rubik Moonrocks Font
+    </h1>
+    <h1 class="font-example" style="font-family: 'Rubik Pixels'">
+      Rubik Pixels Font
+    </h1>
+    <h1 class="font-example" style="font-family: 'Sedgwick Ave'">
+      Sedgwick Ave Font
+    </h1>
+    <h1 class="font-example" style="font-family: 'Special Elite'">
+      Special Elite Font
+    </h1>
+    <h1 class="font-example" style="font-family: 'CocomatUltralight'">
+      COCOMAT ULTRALIGHT
+    </h1>
   </div>
 
   <div class="backgroundcircles" id="circ1"></div>
