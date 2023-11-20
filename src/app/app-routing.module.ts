@@ -4,8 +4,10 @@ import { TetrisComponent } from './tetris/tetris.component';
 import { GamescreenComponent } from './gamescreen/gamescreen.component';
 import { SnakeComponent } from './snake/snake.component';
 import { IntroComponent } from './intro/intro.component';
+import { LudoComponent } from './ludo/ludo.component';
 
 const routes: Routes = [
+  { path: 'ludogame', component: LudoComponent },
   { path: 'tetrisgame', component: TetrisComponent },
   { path: 'snakegame', component: SnakeComponent },
   { path: 'app-gamescreen', component: GamescreenComponent },

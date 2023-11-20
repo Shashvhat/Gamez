@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  --cellsize: 40px;
+}
+
+.rows {
+  display: flex;
+}
+.columns {
+  width: var(--cellsize);
+  height: var(--cellsize);
+  background-color: white;
+}
+
+.moving-image {
+  transform: translateX(+40px);
+}
+
+@keyframes moveImage {
+  0% {
+  }
+  100% {
+    transform: translate(100%, 0);
+  }
+}
+
+.goti {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.4s ease-in-out;
+}
+.dice {
+  color: beige;
+  font: 100px "Love Ya Like A Sister";
+}

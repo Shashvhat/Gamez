@@ -1,0 +1,16 @@
+<div id="sourceDiv" class="sourceDiv"></div>
+<div class="container">
+  <div class="dice" (click)="diceRoll()">{{ DICE_NUM }}</div>
+  <div class="gameboard">
+    <div class="rows" *ngFor="let row of emptyTable; let i = index">
+      <div
+        class="columns"
+        id="a{{ i }}_{{ j }}"
+        *ngFor="let cell of row; let j = index"
+      >
+        <img class="goti" id="b{{ i }}_{{ j }}" />
+        <!-- {{ i }}_{{ j }} -->
+      </div>
+    </div>
+  </div>
+</div>

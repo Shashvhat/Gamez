@@ -27,7 +27,7 @@ export class SnakeComponent {
   snake_Tail: number = 0;
 
   snake_length: number = 2;
-  SNAKE_SPEED: number = 200;
+  SNAKE_SPEED: number = 140;
   SCORE: number = 0;
 
   direction: string = 'ArrowRight';
@@ -135,7 +135,7 @@ export class SnakeComponent {
 
               this.SCORE++;
               if (this.SCORE % 2 == 0) {
-                this.SNAKE_SPEED -= 20;
+                // this.SNAKE_SPEED -= 7;
                 this.NEW_INTERVAL = true;
                 this.speedIncAnim();
               }

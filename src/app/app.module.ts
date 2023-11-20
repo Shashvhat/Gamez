@@ -7,6 +7,7 @@ import { GamescreenComponent } from './gamescreen/gamescreen.component';
 import { TetrisComponent } from './tetris/tetris.component';
 import { SnakeComponent } from './snake/snake.component';
 import { IntroComponent } from './intro/intro.component';
+import { LudoComponent } from './ludo/ludo.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { IntroComponent } from './intro/intro.component';
     GamescreenComponent,
     TetrisComponent,
     SnakeComponent,
-    IntroComponent
+    IntroComponent,
+    LudoComponent
   ],
   imports: [
     BrowserModule,

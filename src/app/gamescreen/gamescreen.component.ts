@@ -14,10 +14,10 @@ export class GamescreenComponent {
   ) {}
 
   ngOnInit() {
-    setTimeout(() => {
-      const ele = this.el.nativeElement.querySelector(`#introid`);
-      // this.renderer.addClass(ele, 'introcom');
-    }, 400);
+    // setTimeout(() => {
+    //   const ele = this.el.nativeElement.querySelector(`#introid`);
+    //   // this.renderer.addClass(ele, 'introcom');
+    // }, 400);
   }
 
   goToGame(gameName: string) {
